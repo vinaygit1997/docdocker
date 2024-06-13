@@ -12,7 +12,7 @@ const LoginSignup = () => {
 
   const login = async () => {
     let dataObj;
-    await fetch('http://localhost:4000/login', {
+    await fetch('mongodb://13.51.204.81:27017/login', {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
@@ -35,7 +35,7 @@ const LoginSignup = () => {
 
   const signup = async () => {
     let dataObj;
-    await fetch('http://localhost:4000/signup', {
+    await fetch('mongodb://13.51.204.81:27017/signup', {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
