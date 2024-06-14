@@ -14,12 +14,12 @@ app.use(cors());
 const cors = require('cors');
 app.use(cors(
   {
-    origin:["mongodb://13.51.204.81:27017"],
+    origin:["mongodb://16.170.28.53:27017"],
     method:['POST','GET','PUT','DELETE'],
     credentials:true
   }
 ));
-mongoose.connect("{ mongodb://13.51.204.81:27017}/e-commerce");
+mongoose.connect("{ mongodb://16.170.28.53:27017}/e-commerce");
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
 
@@ -35,7 +35,7 @@ const upload = multer({storage: storage})
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `mongodb://13.51.204.81:27017/images/${req.file.filename}`
+        image_url: `mongodb://16.170.28.53:27017/images/${req.file.filename}`
     })
 })
 app.use('/images', express.static('upload/images'));
