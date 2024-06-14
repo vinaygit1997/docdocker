@@ -11,10 +11,10 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('mongodb://13.51.204.81:27017/popularinwomen') 
+    fetch('http://16.170.28.53:4000/popularinwomen') 
             .then((res) => res.json()) 
             .then((data) => setPopular(data))
-    fetch('mongodb://13.51.204.81:27017/newcollections') 
+    fetch('http://16.170.28.53:4000/newcollections') 
             .then((res) => res.json()) 
             .then((data) => setNewCollection(data))
     }
