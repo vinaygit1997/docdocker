@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(cors(
   {
-    origin:["http://51.21.140.113:4000"],
+    origin:["http://51.21.140.113"],
     method:['POST','GET','PUT','DELETE'],
     credentials:true
   }
@@ -36,7 +36,7 @@ const upload = multer({storage: storage})
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `http://51.21.140.113:4000/images/${req.file.filename}`
+        image_url: `http://51.21.140.113/images/${req.file.filename}`
     })
 })
 app.use('/images', express.static('upload/images'));
